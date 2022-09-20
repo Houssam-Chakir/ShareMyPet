@@ -19,6 +19,7 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     @review.destroy
     redirect_to list_path(@review.list)
+  end 
 
   private
     # Use callbacks to share common setup or constraints between actions.
