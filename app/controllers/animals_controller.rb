@@ -1,15 +1,22 @@
 class AnimalsController < ApplicationController
+  before_action :find_animal, only: %i[:show :edit :update]
   def index
     @animals = Animal.all
   end
 
   def show
-    @animal = Animal.find(params[:id])
     @review = Review.new
   end
 
   def new
     @animal = Animal.new
+  end
+
+  def edit
+  end
+
+  def update
+    @animal.update(params[:animal]) # Will raise
   end
 
   def create
@@ -30,5 +37,9 @@ class AnimalsController < ApplicationController
 
   def animal_params
     params.require(:animal).permit(:name, :address, :phone_number, :category)
+  end
+
+  def find_animal
+    @animal = Animal.find(params[:id])
   end
 end
