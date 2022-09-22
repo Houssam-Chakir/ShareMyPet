@@ -1,5 +1,15 @@
 <%= render "layouts/navbar" %>
-<h1><%= @animal.name %></h1>
+
+<div class="position-relative" style="width: 18rem;">
+  <div class="card-category card-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @animal.image %>)">
+    <h1><%= @animal.name %></h1>
+  </div>
+
+  <div>
+    <h3><%= @animal.bio %></h3>
+  </div>
+
 
 
 <%= link_to "Delete", animal_path(@animal.id), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: "btn btn-danger" %>
+<%= link_to "Update", animal_path(@animal.id), class: "btn btn-flat" %>
