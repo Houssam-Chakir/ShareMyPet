@@ -1,0 +1,19 @@
+<%= render "layouts/navbar" %>
+<div class="card p-3">
+<h3>Lists:</h3>
+<%#= cl_image_tag("fighter jet", width: 400, height: 300, crop: :fill) %>
+
+  <div class="row">
+    <% @animals.each do |animal| %>
+      <div class="card col-2 m-3" style="width: 18rem;">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%= animal.name %></h5>
+        <%= link_to "More about", animal_path(list.id), class: "btn btn-primary" %>
+        <%= link_to "Delete", animal_path(list.id), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: "btn btn-danger" %>
+
+      </div>
+      </div>
+    <% end %>
+  </div>
+</div>
