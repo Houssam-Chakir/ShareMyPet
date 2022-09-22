@@ -1,0 +1,5 @@
+<%= render "layouts/navbar" %>
+<h1><%= @animal.name %></h1>
+
+
+<%= link_to "Delete", animal_path(@animal.id), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: "btn btn-danger" %>
