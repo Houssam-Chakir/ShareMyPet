@@ -1,5 +1,5 @@
 class AnimalsController < ApplicationController
-  before_action :find_animal, only: [:show, :edit, :update]
+  before_action :find_animal, only: [:show, :edit, :update, :destroy]
   def index
     @animals = Animal.all
   end
