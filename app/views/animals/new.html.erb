@@ -7,11 +7,13 @@
 
         <%= simple_form_for @animal do |f| %>
         <%= f.input :name %>
-        <%= f.input :category, collection:['Cat','Dog','Frog','Other']%>
+        <%= f.input :category, collection:['Cat','Dog','Batrachian','Dinosaure','Other']%>
         <%= f.input :specie %>
         <%= f.input :age %>
         <%= f.input :price_hour %>
         <%= f.input :bio %>
+        <%= f.input :adress %>
+
 
             #upload_photo
 
