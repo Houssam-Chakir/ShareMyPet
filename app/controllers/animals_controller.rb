@@ -2,6 +2,13 @@ class AnimalsController < ApplicationController
   before_action :find_animal, only: [:show, :edit, :update, :destroy]
   def index
     @animals = Animal.all
+
+    @markers = @animals.geocoded.map do |animal|
+      {
+      lat: animal.latitude,
+      lng: animal.longitude
+    }
+    end
   end
 
   def show
