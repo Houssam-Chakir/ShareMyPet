@@ -1,7 +1,8 @@
 <%= render "layouts/navbar" %>
 
-<div class="position-relative" style="width: 18rem;">
-  <div class="card-category card-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @animal.image %>)">
+<div class="position-relative">
+  <div class="card-category card-large">
+    <img src= <%= @animal.image %> alt=<% @animal.name %> style="border-radius:8px;" width="400px" height="400px" text-align="center">
     <h1><%= @animal.name %></h1>
   </div>
 
