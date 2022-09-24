@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   before_action :set_user, only: :destroy
-  before_action :set_animal
 
   def index
     @users = User.all
@@ -18,39 +17,30 @@ class UsersController < ApplicationController
 
   def update
     @user.update(user_params)
-    redirect_to booking_path(@booking)
+    redirect_to user_path(@user)
   end
 
   def create
-    @booking = booking.new(booking_params)
-    @booking.animal = @animal
-    if @booking.save
-      redirect_to animal_path(@animal)
+    @user = user.new(user_params)
+    if @user.save
+      redirect_to user_path(@user)
     else
-      @review = Review.new
       render :new, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @booking.destroy
-    redirect_to animal_path(@booking.animal), status: :see_other
+    @user.destroy
+    redirect_to user_path(@user.all), status: :see_other
   end
 
   private
 
-  def booking_params
-    params.require(:booking).permit(:start_time, :end_time, :animal_id, :user_id, :review_id)
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :photo, :photo_cache)
   end
 
-  def set_booking
-    @booking = booking.find(params[:id])
+  def set_user
+    @user = user.find(params[:id])
   end
-
-  def set_animal
-    @animal = Animal.find(params[:animal_id])
-  end
-end
-
-
 end
