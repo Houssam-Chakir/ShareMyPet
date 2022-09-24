@@ -12,6 +12,7 @@ class AnimalsController < ApplicationController
   end
 
   def show
+    #debug
   end
 
   def new
