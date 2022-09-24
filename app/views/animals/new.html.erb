@@ -1,0 +1,20 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+
+        <h2>Create new animal to share</h2>
+
+        <%= simple_form_for @animal do |f| %>
+        <%= f.input :name %>
+        <%= f.input :category, collection:['Cat','Dog','Frog','Other']%>
+        <%= f.input :specie %>
+        <%= f.input :age %>
+        <%= f.input :price_hour %>
+        <%= f.input :bio %>
+
+            #upload_photo
+
+        <%= f.button :submit, class: "btn btn-primary" %>
+
+        <% end %>
