@@ -6,7 +6,7 @@
   <div class="row">
     <% @animals.each do |animal| %>
       <div class="card col-2 m-3" style="width: 18rem;">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg" class="card-img-top" alt="...">
+      <img src=<%= animal.image %> alt="..." width="100%" height="80%">
       <div class="card-body">
         <h5 class="card-title"><%= animal.name %></h5>
         <%= link_to "More about", animal_path(animal.id), class: "btn btn-primary" %>
@@ -16,4 +16,10 @@
       </div>
     <% end %>
   </div>
+</div>
+
+<div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="pk.eyJ1IjoiamloYW5lamlpaSIsImEiOiJjbDhnM2Q4eXowM2Y0M3BwMmM0cGV2a2YzIn0.q-DEG9fibQC0mzodxg2NNQ">
 </div>
