@@ -1,4 +1,8 @@
 <%= render "layouts/navbar" %>
+<div class="card p-3">
+<h3>Add a new animal:</h3>
+<%= link_to "New animal", new_animal_path, class: "btn btn-success" %>
+
 <div class="inline-container p-3">
   <%#= cl_image_tag("fighter jet", width: 400, height: 300, crop: :fill) %>
 
@@ -14,6 +18,8 @@
           <%= f.input :name, input_html: {value: ""}, class: "search-bar" %>
           <%= f.input :category, collection:['Cat','Dog','Batrachian','Dinosaure','Other'], class: "search-bar" %>
           <%= f.input :specie, class: "search-bar" %>
+
+
 
           <%= f.submit "Search", class: "search-btn search-btn-main" %>
         <% end %>

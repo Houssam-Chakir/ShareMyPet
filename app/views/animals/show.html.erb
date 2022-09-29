@@ -2,15 +2,18 @@
 
 <div class="container py-1">
   <div class="card-category card-large" >
-    <img src= <%= @animal.image %> alt=<% @animal.name %> style="border-radius:8px;" width="100%" height="400px" text-align="center">
+    <img src= <%=  "#{@animal.photo}" %>  alt="" style="border-radius:8px;" width="100%" height="400px" text-align="center">
     <h1><%= @animal.name %></h1>
   </div>
-
-  <div>
+  <div class="card-category card-large" >
+    <h3><%= @animal.category %></h3>
+    <h3><%= @animal.specie %></h3>
+    <h3><%= @animal.age %></h3>
+    <h3><%= @animal.price_hour %></h3>
     <h3><%= @animal.bio %></h3>
+    <h3><%= @animal.address %></h3>
   </div>
-
 
 
 <%= link_to "Delete", animal_path(@animal.id), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: "btn btn-danger" %>
-<%= link_to "Update", animal_path(@animal.id), class: "btn btn-flat" %>
+<%= link_to "Update", edit_animal_path(@animal.id), class: "btn btn-info" %>
