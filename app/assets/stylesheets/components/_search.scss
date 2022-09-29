@@ -1,0 +1,76 @@
+.form-control, .form-select {
+  border-radius: 10px !important;
+  margin: 0 0.5rem;
+  width: 90%;
+  text-align: center;
+}
+
+.search-form {
+  text-align: left;
+  padding: 0 0.5rem;
+}
+
+.map-card {
+  background: white;
+  width: 95%;
+  display: inline-block;
+  margin: 1rem;
+  border-radius: $border-radius-size + 5;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 2px 20px #8a67914d;
+  // z-index: 9999;
+}
+
+.map-container {
+  height: 339px;
+  // float: right;
+  width: 74%;
+  margin: 2rem 1rem;
+  border-radius: 10px;
+}
+
+.search-container {
+  margin: 2rem 1rem;
+}
+
+.flex {
+  display: flex;
+}
+// clash-card barbarian btns search-form
+
+// bouttons
+
+.search-btns {
+  display: inline-flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  text-decoration: none;
+  .search-btn {
+    font-weight: bold;
+    width: 95%;
+    right: -1.4%;
+    top: 86%;
+    margin: 2rem 0 0 0;
+    border: none;
+    // border-radius: 5px;
+    padding: 0.6rem 1.2rem;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 0 20px #1961B507;
+    transition: 0.3s;
+    border-radius: 10px;
+  }
+  .search-btn-main {
+    background-color: #a102c9;
+    border: 2px solid #3768A600;
+    // flex-grow: 5;
+  }
+
+  .search-btn-main:hover {
+    background-color: #d203fcc7;
+    border: 2px solid #d203fcc7;
+    // box-shadow: 0 0 10px #d203fc4f
+  }
+}
