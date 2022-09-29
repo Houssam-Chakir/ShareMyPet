@@ -24,7 +24,11 @@ class AnimalsController < ApplicationController
   end
 
   def update
-    @animal.update(params[:animal]) # Will raise
+    if @animal.update(animal_params)
+      redirect_to animal_path(@animal)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def create

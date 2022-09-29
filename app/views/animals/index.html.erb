@@ -1,5 +1,8 @@
 <%= render "layouts/navbar" %>
 <div class="card p-3">
+<h3>Add a new animal:</h3>
+<%= link_to "New animal", new_animal_path, class: "btn btn-success" %>
+
 <h3>Lists:</h3>
 <%#= cl_image_tag("fighter jet", width: 400, height: 300, crop: :fill) %>
 
@@ -14,7 +17,7 @@
         <h5 class="card-title"><%= animal.name %></h5>
         <%= link_to "More about", animal_path(animal.id), class: "btn btn-primary" %>
         <%= link_to "Delete", animal_path(animal.id), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: "btn btn-danger" %>
-
+        <%= link_to "Booking", animal_path(animal.id), class: "btn btn-info" %>
 
       </div>
       </div>
