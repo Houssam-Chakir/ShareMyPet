@@ -3,6 +3,13 @@ class AnimalsController < ApplicationController
   def index
     @animals = Animal.all
 
+    @search = params["search"]
+    if @search.present?
+      @name = @search["name"]
+      @animal = Animal.where(name: @name)
+      redirect_to animal_path(@animal.ids)
+    end
+
     @markers = @animals.geocoded.map do |animal|
       {
       lat: animal.latitude,
