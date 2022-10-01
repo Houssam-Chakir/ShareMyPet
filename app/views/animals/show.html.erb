@@ -22,7 +22,7 @@
      Be the first to leave a review for <%= @animal.name %>
     <% else %>
       <% @animal.reviews.each do |review| %>
-        <p><%= review.content %></p>
+        <p>"<%= review.content %>"</p>
       <% end %>
     <% end %>
 
