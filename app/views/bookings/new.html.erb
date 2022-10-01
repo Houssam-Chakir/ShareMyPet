@@ -1,0 +1,23 @@
+<%= render "layouts/navbar" %>
+
+<div class="card-category card-large" >
+    <h3>Book this animal</h3>
+    <%= simple_form_for([@animal, @booking]) do |f| %>
+    <%= f.input :start_time %>
+    <%= f.input :end_time %>
+    <%# <%= f.input :total_price %>
+    <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+    <% end %>
+</div>
+
+<%# t.date "start_time"
+    t.date "end_time"
+    t.bigint "animal_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "review_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["animal_id"], name: "index_bookings_on_animal_id"
+    t.index ["review_id"], name: "index_bookings_on_review_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id" %>
