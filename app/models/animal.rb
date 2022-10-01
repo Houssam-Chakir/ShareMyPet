@@ -8,5 +8,4 @@ class Animal < ApplicationRecord
   validates :photo, presence: true
   validates :name, presence: true
   validates :price_hour, presence: true
-
 end

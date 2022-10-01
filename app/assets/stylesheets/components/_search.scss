@@ -10,11 +10,18 @@
   padding: 0 0.5rem;
 }
 
+.form-label {
+  margin-bottom: 0;
+}
+
+abbr[title] {
+  opacity: 0;
+}
 .map-card {
   background: white;
   width: 95%;
   display: inline-block;
-  margin: 1rem;
+  // margin: 1rem;
   border-radius: $border-radius-size + 5;
   position: relative;
   text-align: center;
@@ -25,13 +32,20 @@
 .map-container {
   height: 339px;
   // float: right;
-  width: 74%;
+  width: 100%;
   margin: 2rem 1rem;
   border-radius: 10px;
 }
 
 .search-container {
   margin: 2rem 1rem;
+  position: absolute;
+  background: white;
+  border-radius: 10px;
+  height: 75%;
+  top: 5%;
+  left: 2%;
+  z-index: 200;
 }
 
 .flex {
@@ -51,7 +65,7 @@
     width: 95%;
     right: -1.4%;
     top: 86%;
-    margin: 2rem 0 0 0;
+    margin: 1rem 0 0 0;
     border: none;
     // border-radius: 5px;
     padding: 0.6rem 1.2rem;
@@ -63,8 +77,9 @@
     border-radius: 10px;
   }
   .search-btn-main {
-    background-color: #a102c9;
+    background-color: #f5cdff;
     border: 2px solid #3768A600;
+    color: #5d226c;
     // flex-grow: 5;
   }
 
