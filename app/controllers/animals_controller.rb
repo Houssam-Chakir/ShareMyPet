@@ -2,12 +2,12 @@ class AnimalsController < ApplicationController
   before_action :find_animal, only: [:show, :edit, :update, :destroy]
   def index
     @animals = Animal.all
-
     @search = params["search"]
     if @search.present?
       @name = @search["name"]
-      @animal = Animal.where(name: @name)
-      redirect_to animal_path(@animal.ids)
+      @category = @search["category"]
+      @specie = @search["specie"]
+      @animals = Animal.where(name: @name)
     end
 
     @markers = @animals.geocoded.map do |animal|
@@ -15,7 +15,7 @@ class AnimalsController < ApplicationController
       lat: animal.latitude,
       lng: animal.longitude,
       info_window: render_to_string(partial: "info_window", locals: {animal: animal})
-    }
+      }
     end
   end
 
@@ -58,7 +58,6 @@ class AnimalsController < ApplicationController
 
   def animal_params
     params.require(:animal).permit(:name, :specie, :category, :photo, :address, :age, :price_hour, :bio, :user_id)
-
   end
 
   def find_animal
