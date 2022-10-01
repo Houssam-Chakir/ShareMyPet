@@ -1,13 +1,15 @@
 <%= render "layouts/navbar" %>
 
+<div class="container py-1">
+  <div class="card-category card-large" >
+
 <% @bookings.each do |booking| %>
       <div class="slide-container">
-          <%= booking.animal.photo %>
+      <div class="container py-1">
+    <img src= <%= booking.animal.photo %>  alt="" style="border-radius:8px;" width="70px" height="70px" text-align="center">
           <%= booking.animal.name %>
           <%= booking.start_time %>
           <%= booking.end_time %>
           <%= booking.total_price %>
       </div>
 <% end %>
-
-<%= link_to "Index", animals_path, class: "bttn btn-main" %>
