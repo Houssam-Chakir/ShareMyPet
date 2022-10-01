@@ -4,11 +4,14 @@ class ReviewsController < ApplicationController
   end
 
   def create
+    @animal = Animal.find(params[:animal_id])
     @review = Review.new(review_params)
-    @booking = Booking.find(params[:booking_id])
-    @review.save
-
-    render :success
+    @review.animal = @animal
+    if @review.save
+      redirect_to animal_path(@animal)
+    else
+      render "animals/show", status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -20,6 +23,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:comment, :rating)
+    params.require(:review).permit(:content)
   end
 end
