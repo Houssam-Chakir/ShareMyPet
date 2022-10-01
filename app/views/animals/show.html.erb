@@ -20,12 +20,11 @@
       <h2><strong>Customer Reviews⭐</strong> <span><%= pluralize @animal.reviews.size, "review"%></h2>
 
 
-      <% if @animal.reviews.blank? %>
-      Be the first to leave a review for <%= @animal.name %>
-      <% else %>
-        <% @animal.reviews.each do |review| %>
-          <p><%= review.content %></p>
-        <% end %>
+    <% if @animal.reviews.blank? %>
+     Be the first to leave a review for <%= @animal.name %>
+    <% else %>
+      <% @animal.reviews.each do |review| %>
+        <p>"<%= review.content %>"</p>
       <% end %>
       <h1></h1>
       
