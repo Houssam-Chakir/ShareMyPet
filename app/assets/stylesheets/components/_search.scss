@@ -63,7 +63,6 @@ abbr[title] {
   text-align: center;
   .search-btn {
     font-weight: bold;
-    width: 95%;
     right: -1.4%;
     top: 86%;
     margin: 1rem 0 0 0;
@@ -78,6 +77,14 @@ abbr[title] {
     border-radius: 10px;
   }
   .search-btn-main {
+    width: 95%;
+    background-color: #f5cdff;
+    border: 2px solid #3768A600;
+    color: #5d226c;
+    // flex-grow: 5;
+  }
+  .booking-btn-main {
+    // width: 95%;
     background-color: #f5cdff;
     border: 2px solid #3768A600;
     color: #5d226c;

@@ -1,3 +1,7 @@
+$dark-color-text: #6c2078;
+$light-color-bg: #f5cdff;
+$dark-color-bg: #a102c9;
+
 .info-card {
   display: flex;
   align-items: center;
@@ -17,7 +21,7 @@
   .info-bottom {
     color: rgb(112, 50, 117);
     font-weight: bolder;
-    margin-top: 3rem;
+    margin-top: 1rem;
   }
   h3 {
     font-size: medium;
@@ -38,8 +42,48 @@
   padding: 2rem;
 }
 
-.btn-c {
-  background-color: #f5cdff;
-  color: #3768A600;
+.myButton {
+	background-color:$light-color-bg;
+	border-radius:10px;
+	border:1px solid $light-color-bg;
+	display:inline-block;
+	cursor:pointer;
+	color: $dark-color-text;
+	font-family:Arial;
+	font-size:17px;
+	font-weight:bold;
+	padding:11px 31px;
+	text-decoration:none;
+}
+.myButton:hover {
+	background-color:#a456b8;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
 }
 
+.myButton2 {
+	background-color:$dark-color-bg;
+	border-radius:10px;
+	border:1px solid $dark-color-bg;
+	display:inline-block;
+	cursor:pointer;
+	color: white;
+	font-family:Arial;
+	font-size:17px;
+	font-weight:bold;
+	padding:11px 31px;
+	text-decoration:none;
+}
+.myButton2:hover {
+	background-color:#a456b8;
+}
+.myButton2:active {
+	position:relative;
+	top:1px;
+}
+
+.ghost-btn {
+  color: $dark-color-text;
+}

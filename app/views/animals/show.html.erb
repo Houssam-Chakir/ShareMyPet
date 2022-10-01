@@ -31,13 +31,17 @@
       <h1></h1>
       <%= simple_form_for([@animal, @review]) do |f| %>
         <%= f.input :content %>
-        <%= f.button :submit, class: 'btn btn-primary' %>
+        <%= f.button :submit, class: 'myButton' %>
       <% end %>
       <br>
       <%= link_to "Back to all animals", animals_path %>
       <%= link_to "Delete", animal_path(@animal.id), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: "" %>
       <%= link_to "Update", edit_animal_path(@animal.id), class: "" %>
     </div>
+</div>
+</div>
+</div>
+
 <%= render "layouts/footer" %>
 
 
