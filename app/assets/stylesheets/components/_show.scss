@@ -1,0 +1,45 @@
+.info-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  justify-items: center;
+  margin: 2rem;
+  padding: 2rem;
+  .picture {
+    border-radius: 10px;
+    width: 40%;
+    height: 100%;
+  }
+  .info-top {
+    display: inline;
+    margin-left: 1rem;
+  }
+  .info-bottom {
+    color: rgb(112, 50, 117);
+    font-weight: bolder;
+    margin-top: 3rem;
+  }
+  h3 {
+    font-size: medium;
+  }
+
+  .book {
+    margin-top: 3.3rem;
+  }
+}
+.card-border {
+  background: rgb(254, 245, 255);
+  box-shadow: 0 2px 20px #e4b8ed4d;
+  border-radius: 10px;
+}
+
+.card-dem {
+  margin: 2rem;
+  padding: 2rem;
+}
+
+.btn-c {
+  background-color: #f5cdff;
+  color: #3768A600;
+}
+
