@@ -6,16 +6,20 @@
     <div class="col-12 col-md-6 offset-lg-3">
       <div class="bg-white rounded p-3 shadow">
 
-<div class="card-category card-large" >
+<div class="card-category card-large card-border card-dem" >
     <h3>Book this animal</h3>
     <%= simple_form_for([@animal, @booking]) do |f| %>
     <%= f.input :start_time %>
     <%= f.input :end_time %>
-    <%# <%= f.input :total_price %>
     <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
     <%= f.button :submit, class: "btn btn-primary" %>
 
     <% end %>
+
+</div>
+</div>
+</div>
+</div>
 </div>
 
-
+<%= render "layouts/footer" %>

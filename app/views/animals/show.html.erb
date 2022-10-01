@@ -8,8 +8,9 @@
         <h3><%= @animal.bio %></h3>
         <h3><%= @animal.address %></h3>
         <div class="info-bottom col-8 search-btns">
-          <h5><strong><%= @animal.category %> - specie: <%= @animal.specie %> - age: <%= @animal.age %></strong></h5>
-          <h5><strong><%= @animal.price_hour %>$/h</strong></h5>
+          <h5><strong><%= @animal.category %> - specie: <%= @animal.specie %> - age: <%= @animal.age %> -</strong></h5>
+          <br>
+          <h5><strong>Price/hour: <%= @animal.price_hour %>MAD/h</strong></h5>
           <%= link_to "Book!", "/animals/#{@animal.id}/bookings/new", class: "search-btn search-btn-main book" %>
         </div>
       </span>
@@ -26,8 +27,8 @@
       <% @animal.reviews.each do |review| %>
         <p>"<%= review.content %>"</p>
       <% end %>
+    <% end %>
       <h1></h1>
-      
       <%= simple_form_for([@animal, @review]) do |f| %>
         <%= f.input :content %>
         <%= f.button :submit, class: 'btn btn-primary' %>
@@ -37,6 +38,8 @@
       <%= link_to "Delete", animal_path(@animal.id), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: "" %>
       <%= link_to "Update", edit_animal_path(@animal.id), class: "" %>
     </div>
+<%= render "layouts/footer" %>
+
 
 
 

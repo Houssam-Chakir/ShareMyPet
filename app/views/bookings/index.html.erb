@@ -1,15 +1,27 @@
 <%= render "layouts/navbar" %>
-
-<div class="container py-1">
+<div class="container py-1 card-dem">
+<h3>My bookings</h3>
   <div class="card-category card-large" >
 
 <% @bookings.each do |booking| %>
-      <div class="slide-container">
-      <div class="container py-1">
-    <img src= <%= booking.animal.photo %>  alt="" style="border-radius:8px;" width="70px" height="70px" text-align="center">
-          <%= booking.animal.name %>
-          <%= booking.start_time %>
-          <%= booking.end_time %>
-          <%= booking.total_price %>
+      <div class="slide-container p-4">
+        <div class="container py-1 card-border">
+            <img src= <%= booking.animal.photo %>  alt="" style="border-radius:8px;" width="70px" height="70px" text-align="center">
+            <%= booking.animal.name %>
+            <div>
+            <%= booking.start_time %>
+            <%= booking.end_time %>
+            <strong><%= booking.total_price %> MAD/h</strong>
+            </div>
+        </div>
       </div>
 <% end %>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  
+<%= render "layouts/footer" %>
