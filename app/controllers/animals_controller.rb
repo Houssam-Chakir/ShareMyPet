@@ -21,6 +21,7 @@ class AnimalsController < ApplicationController
 
   def show
     #debug
+    @review = Review.new
   end
 
   def new

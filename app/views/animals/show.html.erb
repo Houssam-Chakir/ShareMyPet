@@ -17,3 +17,4 @@
 
 <%= link_to "Delete", animal_path(@animal.id), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: "btn btn-danger" %>
 <%= link_to "Update", edit_animal_path(@animal.id), class: "btn btn-info" %>
+<%= link_to "Book!", "/animals/#{@animal.id}/bookings/new", class: "btn btn-primary" %>

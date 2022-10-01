@@ -1,0 +1,13 @@
+<%= render "layouts/navbar" %>
+
+<% @bookings.each do |booking| %>
+      <div class="slide-container">
+          <%= booking.animal.photo %>
+          <%= booking.animal.name %>
+          <%= booking.start_time %>
+          <%= booking.end_time %>
+          <%= booking.total_price %>
+      </div>
+<% end %>
+
+<%= link_to "Index", animals_path, class: "bttn btn-main" %>
