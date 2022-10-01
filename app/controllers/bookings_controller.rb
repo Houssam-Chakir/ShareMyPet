@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: :destroy
-  before_action :set_animal
+  before_action :set_animal, only: [:create,:new,:total_price]
 
   def index
     @bookings = Booking.all
@@ -22,12 +22,12 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = booking.new(booking_params)
+    @booking = Booking.new(booking_params)
     @booking.animal = @animal
-    if @booking.save
-      redirect_to animal_path(@animal)
+    @booking.total_price = ((@booking.end_time.to_time - @booking.start_time.to_time) / 3600).to_i * @animal.price_hour
+    if @booking.save!
+      redirect_to "/animals/:animal_id/bookings"
     else
-      @review = Review.new
       render :new, status: :unprocessable_entity
     end
   end
@@ -40,11 +40,11 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_time, :end_time, :animal_id, :user_id, :review_id)
+    params.require(:booking).permit(:start_time, :end_time, :animal_id, :user_id)
   end
 
   def set_booking
-    @booking = booking.find(params[:id])
+    @booking = Booking.find(params[:id])
   end
 
   def set_animal

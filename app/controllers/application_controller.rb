@@ -8,5 +8,5 @@ before_action :authenticate_user!
     # devise_parameter_sanitizer.permit(:sign_in, keys: [:login, :email, :password, :remember_me])
     # For additional in app/views/devise/registrations/edit.html.erb
     devise_parameter_sanitizer.permit(:account_update, keys: [:email, :password, :password_confirmation])
-    end
+  end
 end

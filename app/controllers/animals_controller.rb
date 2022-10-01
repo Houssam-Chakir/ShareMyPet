@@ -20,7 +20,8 @@ class AnimalsController < ApplicationController
   end
 
   def show
-    #debug
+
+    @review = Review.new
   end
 
   def new

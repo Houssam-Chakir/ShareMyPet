@@ -14,6 +14,27 @@
     <h3><%= @animal.address %></h3>
   </div>
 
+  <div class="review-section" >
+    <h2><strong>Customer Reviews⭐</strong></h2>
+    <h3><%= pluralize @animal.reviews.size, "review" %></h3>
+
+    <% if @animal.reviews.blank? %>
+     Be the first to leave a review for <%= @animal.name %>
+    <% else %>
+      <% @animal.reviews.each do |review| %>
+        <p><%= review.content %></p>
+      <% end %>
+    <% end %>
+
+    <%= simple_form_for([@animal, @review]) do |f| %>
+      <%= f.input :content %>
+      <%= f.button :submit, class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+
+
+  <%= link_to "Back to all animals", animals_path %>
 
 <%= link_to "Delete", animal_path(@animal.id), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: "btn btn-danger" %>
 <%= link_to "Update", edit_animal_path(@animal.id), class: "btn btn-info" %>
+<%= link_to "Book!", "/animals/#{@animal.id}/bookings/new", class: "btn btn-primary" %>
